@@ -1,7 +1,15 @@
-let input = document.querySelector("input");
-let body = document.querySelector("body");
+let inputs = document.querySelectorAll("input");
 
-function changeBackground(event){
-body.style.backgroundColor = event.target.value;
+
+inputs[0].addEventListener("input",function(){
+    setLinear(inputs[0].value,inputs[1].value);
+});
+inputs[1].addEventListener("input",function(){
+    setLinear(inputs[0].value,inputs[1].value);
+});
+
+setLinear(inputs[0].value,inputs[1].value);
+
+function  setLinear(color1,color2){
+    document.body.style.background=`linear-gradient(to right, ${color1},${color2})`;
 }
-input.addEventListener("input", changeBackground);
