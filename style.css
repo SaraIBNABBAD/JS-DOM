@@ -9,10 +9,12 @@ div{
     width: 70%;
     margin: auto;
     padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px 10px 0  0;
 }
 p{
     
-    width: 72%;
+    width: 71.7%;
     margin: auto;
    border: 1px solid rgb(92, 91, 91);
    border-radius: 1px;

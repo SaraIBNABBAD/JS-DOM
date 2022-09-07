@@ -1,6 +1,6 @@
 
 let parg = document.getElementById("content");
-let icone = document.querySelector("button");
+let icone = document.querySelector("i");
 
 icone.addEventListener("click",function(){
     parg.classList.toggle("hide");
