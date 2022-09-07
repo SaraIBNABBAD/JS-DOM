@@ -1,7 +1,7 @@
-let input = document.querySelector("input");
-let body = document.querySelector("body");
+let body = document.body;
+let btn1 = document.querySelector("button");
+let btn2 = document.querySelector("button");
 
-function changeBackground(event){
-body.style.backgroundColor = event.target.value;
+function addNumber(){
+    
 }
-input.addEventListener("input", changeBackground);
