@@ -1,4 +1,30 @@
+.hide{
+    display: none;
+}
+
+div{
+    display: flex;
+    gap: 100px;
+    background-color: rgb(121, 209, 211);
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+}
+p{
+    
+    width: 72%;
+    margin: auto;
+   border: 1px solid rgb(92, 91, 91);
+   border-radius: 1px;
+   padding: 10px;
+   box-sizing: border-box;
+}
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
 h1{
-    text-align: center;
-    font-size: 3em;
+    color: white;
+    margin: auto;
 }

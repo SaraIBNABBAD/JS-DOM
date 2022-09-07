@@ -1,15 +1,13 @@
-let inputs = document.querySelectorAll("input");
 
+let parg = document.getElementById("content");
+let icone = document.querySelector("button");
 
-inputs[0].addEventListener("input",function(){
-    setLinear(inputs[0].value,inputs[1].value);
+icone.addEventListener("click",function(){
+    parg.classList.toggle("hide");
+    if(parg.classList.contains("hide")){
+        icone.classList.replace("fa-minus","fa-plus");
+    }else{
+        icone.classList.replace("fa-plus","fa-minus");
+    }
 });
-inputs[1].addEventListener("input",function(){
-    setLinear(inputs[0].value,inputs[1].value);
-});
 
-setLinear(inputs[0].value,inputs[1].value);
-
-function  setLinear(color1,color2){
-    document.body.style.background=`linear-gradient(to right, ${color1},${color2})`;
-}
