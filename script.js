@@ -1,7 +1,19 @@
 let body = document.body;
-let btn1 = document.querySelector("button");
-let btn2 = document.querySelector("button");
+let result = document.getElementById("result");
+let btns = document.querySelectorAll("button");
+
+
+let count = Number(result.textContent);
 
 function addNumber(){
-    
+    console.log(count);
+    result.textContent = ++count;
 }
+
+function lowNumber(){
+    result.textContent = --count;
+    console.log(count);
+}
+
+btns[0].addEventListener("click",addNumber); 
+btns[1].addEventListener("click",lowNumber); 
