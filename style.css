@@ -1,5 +1,9 @@
 .hide{
-    display: none;
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0;
 }
 
 div{
@@ -12,7 +16,7 @@ div{
     border: 1px solid transparent;
     border-radius: 10px 10px 0  0;
 }
-p{
+#content{
     
     width: 71.7%;
     margin: auto;
@@ -21,6 +25,7 @@ p{
    padding: 30px;
    box-sizing: border-box;
    background-color: rgb(242, 237, 237);
+   transition: all 0.5s;
 }
 button{
     background-color: transparent;
