@@ -1,6 +1,6 @@
 body{
     margin: 0%;
-    background-image:url(aesthetic-dark-wallpaper-background-neon-light.jpg);
+    background-image:url(23.jpg);
     width: 100%;
     background-repeat: no-repeat;
 }
@@ -18,17 +18,19 @@ button{
 div{
     text-align: center;
     width: 50%;
-    margin: auto;
-    border: 2px solid black;
+    margin: 100px ;
+    /* margin: auto;s */
+    border: 2px solid transparent;
     border-radius: 5px;
     padding: 50px;
     box-sizing: border-box;
     box-shadow: 0 3px 10px 3px rgb(144, 142, 142);
 }
 h1{
-    color: white;
+    text-transform: uppercase;
 }
 h2{
-    padding: 30px;
+    padding: 20px;
+    font-size: 3em;
 }
    
