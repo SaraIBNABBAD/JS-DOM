@@ -9,15 +9,20 @@
  });
  btn.addEventListener("click",function(){
   Devifac();
- })
- choix[1].addEventListener("click",function(){
-  text.innerText="saisir un nombre entre 10 et 100";
-  Devimoy();
  });
- choix[2].addEventListener("click",function(){
-  text.innerText="saisir un nombre entre 100 et 1000";
-  Devidef();
- });
+
+//  choix[1].addEventListener("click",function(){
+//   text.innerText="saisir un nombre entre 10 et 100";
+//  });
+//  btn.addEventListener("click",function(){
+//   Devimoy();
+//  });
+//  choix[2].addEventListener("click",function(){
+//   text.innerText="saisir un nombre entre 100 et 1000";
+//  });
+//  btn.addEventListener("click",function(){
+//   Devidef();
+//  });
 
 
  function Aleatoire(min, max)
@@ -33,58 +38,64 @@
  let entierb = Aleatoire(100, 1000);
  console.log(entierb);
 
- let nbr, chance;
- chance = 3;
-
+ 
+ let chance = 3;
+ let nbrTrouve = false;
 
 function Devifac(){
-
+ let nbr = Number(val.value);
   switch (true) {
-        case (val.value > entier):
+        case (nbr > entier):
           text.innerText="plus petit";
           chance--;
-          val.value="";
+          nbr="";
           break;
-        case (val.value == entier):
+        case (nbr === entier):
            text.innerText="nombre trouvé";
            chance = 0;
-           val.value="";
+           nbr="";
            break;
         default:
           text.innerText="plus grand";
           chance--;
-          val.value="";
+          nbr="";
        }
       };
   
  
 // function Devimoy(){
 //   switch (true) {
-//     case (val.value > entier):
+//     case (nbrSaisie > entiera):
 //       text.innerText="plus petit";
 //       chance--;
+//       nbrSaisie="";
 //       break;
-//     case (val.value == entier):
+//     case (nbrSaisie === entiera):
 //        text.innerText="nombre trouvé";
 //        chance = 0;
+//        nbrSaisie="";
 //        break;
 //     default:
 //       text.innerText="plus grand";
 //       chance--;
+//       nbrSaisie="";
 //    }
 //   };
 // function Devidef(){
 //   switch (true) {
-//     case (val.value > entier):
+//     case (val.value > entierb):
 //       text.innerText="plus petit";
 //       chance--;
+        //  val.value="";
 //       break;
-//     case (val.value == entier):
+//     case (val.value == entierb):
 //        text.innerText="nombre trouvé";
 //        chance = 0;
+// val.value="";
 //        break;
 //     default:
 //       text.innerText="plus grand";
 //       chance--;
+// val.value="";
 //    }
 //   };
