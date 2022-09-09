@@ -32,11 +32,11 @@
  let entier = Aleatoire(1, 10);
  console.log(entier);
 
- let entiera = Aleatoire(10, 100);
- console.log(entiera); 
+//  let entiera = Aleatoire(10, 100);
+//  console.log(entiera); 
 
- let entierb = Aleatoire(100, 1000);
- console.log(entierb);
+//  let entierb = Aleatoire(100, 1000);
+//  console.log(entierb);
 
  
  let chance = 3;
@@ -44,21 +44,24 @@
 
 function Devifac(){
  let nbr = Number(val.value);
-  switch (true) {
-        case (nbr > entier):
-          text.innerText="plus petit";
-          chance--;
-          nbr="";
-          break;
-        case (nbr === entier):
-           text.innerText="nombre trouvé";
-           chance = 0;
-           nbr="";
-           break;
-        default:
-          text.innerText="plus grand";
-          chance--;
-          nbr="";
+  if (nbr<entier){
+    text.innerText="plus grand";
+    chance--;
+  }else if(nbr===entier){
+    text.innerText="nombre trouvé";
+    
+    nbrTrouve=true;
+  }else{
+    text.innerText="plus petit";
+    chance--;
+  }
+       if(chance===0 && nbrTrouve===false){
+        text.innerText="echoué";
+        text.style.color="red";
+       }
+       if(nbrTrouve===true){
+        text.innerText="bien joué";
+        text.style.color="green";
        }
       };
   
