@@ -4,82 +4,59 @@
  let btn = document.querySelector("button");
  let btnR = document.getElementById("restart");
  let val = document.getElementById("valeur");
-
- choix[0].addEventListener("click",function(){
-  text.innerText="saisir un nombre entre 1 et 10";
- });
- btn.addEventListener("click",Devifac);
-
-//  choix[1].addEventListener("click",function(){
-//   text.innerText="saisir un nombre entre 10 et 100";
-//  });
-//  btn.addEventListener("click",function(){
-//   Devimoy();
-//  });
-//  choix[2].addEventListener("click",function(){
-//   text.innerText="saisir un nombre entre 100 et 1000";
-//  });
-//  btn.addEventListener("click",function(){
-//   Devidef();
-//  });
-
+let viewA = document.getElementById("jouer");
+let viewB = document.getElementById("rejouer");
 
  function Aleatoire(min, max)
  {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
- let entier = Aleatoire(1, 10);
- console.log(entier);
+let entier = Aleatoire(1, 10);;
+console.log(entier);
 
-//  let entiera = Aleatoire(10, 100);
-//  console.log(entiera); 
 
-//  let entierb = Aleatoire(100, 1000);
-//  console.log(entierb);
-let chance;
-let nbrTrouve;
-let message;
-function init() {
-  chance = 3;
-  nbrTrouve = false;
-  entier = Aleatoire(1, 10);
-  text.textContent = "";
-}
+  let tentative= 3;
+  let nbreTrouve = false;
+  
+
 
 function rejouerView() {
-  document.querySelector("#rejouer").style.display = "block";
-  document.querySelector("#jouer").style.display = "none";
+  viewB.style.display = "block";
+  viewA.style.display = "none";
 }
 function jouerView() {
-  init();
-  document.querySelector("#rejouer").style.display = "none";
-  document.querySelector("#jouer").style.display = "block";
+
+  viewB.style.display = "none";
+  viewA.style.display = "block";
 }
-init();
-function Devifac(){
+
+
+function devinFacil(){
  let nbr = Number(val.value);
-  if (nbr<entier){
+  if (nbr < entier){
     text.innerText="plus grand";
-    val.value="";
-    chance--;
-  }else if(nbr===entier){
+    tentative--;
+  }else if(nbr === entier){
     text.innerText="nombre trouvé";
-    nbrTrouve=true;
-    val.value="";
+    nbreTrouve=true;
   }else{
     text.innerText="plus petit";
-    chance--;
-    val.value="";
+    tentative--;
   }
-       if(chance===0 && nbrTrouve===false){
-        text.innerText="echoué";
+       if(tentative === 0 && nbreTrouve === false){
+        text.innerText="Vous avez echoué";
         text.style.color="red";
         rejouerView();
        }
-       if(nbrTrouve===true){
-        text.innerText="bien joué";
+       if(nbreTrouve === true){
+        text.innerText="Vous avez bien joué";
         text.style.color="green";
         rejouerView();
        }
+       val.value="";
       };
-      btnR.addEventListener("click", jouerView);
+      // choix[0].addEventListener("click",function(){
+      //   text.innerText="Saisir un nombre entre 1 et 10";
+      //  });
+       btn.addEventListener("click",devinFacil);
+       btnR.addEventListener("click",jouerView);
