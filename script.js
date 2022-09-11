@@ -2,14 +2,13 @@
  let choix = document.querySelectorAll("input");
  let text = document.querySelector("p");
  let btn = document.querySelector("button");
+ let btnR = document.getElementById("restart");
  let val = document.getElementById("valeur");
 
  choix[0].addEventListener("click",function(){
   text.innerText="saisir un nombre entre 1 et 10";
  });
- btn.addEventListener("click",function(){
-  Devifac();
- });
+ btn.addEventListener("click",Devifac);
 
 //  choix[1].addEventListener("click",function(){
 //   text.innerText="saisir un nombre entre 10 et 100";
@@ -27,7 +26,7 @@
 
  function Aleatoire(min, max)
  {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
  let entier = Aleatoire(1, 10);
  console.log(entier);
@@ -37,11 +36,26 @@
 
 //  let entierb = Aleatoire(100, 1000);
 //  console.log(entierb);
+let chance;
+let nbrTrouve;
+let message;
+function init() {
+  chance = 3;
+  nbrTrouve = false;
+  entier = Aleatoire(1, 10);
+  text.textContent = "";
+}
 
- 
- let chance = 3;
- let nbrTrouve = false;
-
+function rejouerView() {
+  document.querySelector("#rejouer").style.display = "block";
+  document.querySelector("#jouer").style.display = "none";
+}
+function jouerView() {
+  init();
+  document.querySelector("#rejouer").style.display = "none";
+  document.querySelector("#jouer").style.display = "block";
+}
+init();
 function Devifac(){
  let nbr = Number(val.value);
   if (nbr<entier){
@@ -60,47 +74,12 @@ function Devifac(){
        if(chance===0 && nbrTrouve===false){
         text.innerText="echoué";
         text.style.color="red";
+        rejouerView();
        }
        if(nbrTrouve===true){
         text.innerText="bien joué";
         text.style.color="green";
+        rejouerView();
        }
       };
-  
- 
-// function Devimoy(){
-//   switch (true) {
-//     case (nbrSaisie > entiera):
-//       text.innerText="plus petit";
-//       chance--;
-//       nbrSaisie="";
-//       break;
-//     case (nbrSaisie === entiera):
-//        text.innerText="nombre trouvé";
-//        chance = 0;
-//        nbrSaisie="";
-//        break;
-//     default:
-//       text.innerText="plus grand";
-//       chance--;
-//       nbrSaisie="";
-//    }
-//   };
-// function Devidef(){
-//   switch (true) {
-//     case (val.value > entierb):
-//       text.innerText="plus petit";
-//       chance--;
-        //  val.value="";
-//       break;
-//     case (val.value == entierb):
-//        text.innerText="nombre trouvé";
-//        chance = 0;
-// val.value="";
-//        break;
-//     default:
-//       text.innerText="plus grand";
-//       chance--;
-// val.value="";
-//    }
-//   };
+      btnR.addEventListener("click", jouerView);
