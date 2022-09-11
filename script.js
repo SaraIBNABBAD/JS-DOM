@@ -21,11 +21,12 @@ console.log(entier);
 
 
 function rejouerView() {
+
   viewB.style.display = "block";
   viewA.style.display = "none";
 }
 function jouerView() {
-
+ 
   viewB.style.display = "none";
   viewA.style.display = "block";
 }
@@ -55,8 +56,5 @@ function devinFacil(){
        }
        val.value="";
       };
-      // choix[0].addEventListener("click",function(){
-      //   text.innerText="Saisir un nombre entre 1 et 10";
-      //  });
-       btn.addEventListener("click",devinFacil);
-       btnR.addEventListener("click",jouerView);
+          btn.addEventListener("click",devinFacil);
+          btnR.addEventListener("click",jouerView);
