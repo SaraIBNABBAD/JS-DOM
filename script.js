@@ -46,14 +46,16 @@ function Devifac(){
  let nbr = Number(val.value);
   if (nbr<entier){
     text.innerText="plus grand";
+    val.value="";
     chance--;
   }else if(nbr===entier){
     text.innerText="nombre trouvé";
-    
     nbrTrouve=true;
+    val.value="";
   }else{
     text.innerText="plus petit";
     chance--;
+    val.value="";
   }
        if(chance===0 && nbrTrouve===false){
         text.innerText="echoué";
