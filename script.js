@@ -1,106 +1,54 @@
  
- let choix = document.querySelectorAll("input");
- let text = document.querySelector("p");
- let btn = document.querySelector("button");
- let val = document.getElementById("valeur");
+ let affichage = document.getElementById("affichage");
+ let btn1 = document.getElementById("control");
+ let btn2 = document.getElementById("reje");
+ let saisie = document.querySelector("input");
+ let mot = document.getElementById("fin");
+ let zoneA = document.getElementById("jeu");
+ let zoneB =document.getElementById("finJeu");
 
- choix[0].addEventListener("click",function(){
-  text.innerText="saisir un nombre entre 1 et 10";
- });
- btn.addEventListener("click",function(){
-  Devifac();
- });
-
-//  choix[1].addEventListener("click",function(){
-//   text.innerText="saisir un nombre entre 10 et 100";
-//  });
-//  btn.addEventListener("click",function(){
-//   Devimoy();
-//  });
-//  choix[2].addEventListener("click",function(){
-//   text.innerText="saisir un nombre entre 100 et 1000";
-//  });
-//  btn.addEventListener("click",function(){
-//   Devidef();
-//  });
-
+ function Findejeu(){
+  zoneA.style.display="none";
+  zoneB.style.display="block";
+ }
+ function Rejouer(){
+  Somme();
+  zoneB.style.display="none";
+  zoneA.style.display="block"
+ }
 
  function Aleatoire(min, max)
  {
   return Math.floor(Math.random() * (max - min)) + min;
 }
- let entier = Aleatoire(1, 10);
- console.log(entier);
+let entierA;
+ let entierB;
+let res ;
+function Somme() {
+  entierA = Aleatoire(1, 100);
+  entierB = Aleatoire(1, 100);
+  res = entierA+entierB;
+ affichage.innerText = entierA+" "+"+"+" "+entierB;
+ affichage.style.color="yellow";
+ console.log(res);
+}
 
-//  let entiera = Aleatoire(10, 100);
-//  console.log(entiera); 
+function Compariason(){
 
-//  let entierb = Aleatoire(100, 1000);
-//  console.log(entierb);
-
- 
- let chance = 3;
- let nbrTrouve = false;
-
-function Devifac(){
- let nbr = Number(val.value);
-  if (nbr<entier){
-    text.innerText="plus grand";
-    val.value="";
-    chance--;
-  }else if(nbr===entier){
-    text.innerText="nombre trouvé";
-    nbrTrouve=true;
-    val.value="";
-  }else{
-    text.innerText="plus petit";
-    chance--;
-    val.value="";
+  if(saisie.value.length<=0){
+    mot.innerText= "Champ vide saisir une somme";
+    mot.style.color="blue";
+  }else if(saisie.value == res){
+    mot.innerText= "Excellent vous avez gagné";
+    mot.style.color="green";
   }
-       if(chance===0 && nbrTrouve===false){
-        text.innerText="echoué";
-        text.style.color="red";
-       }
-       if(nbrTrouve===true){
-        text.innerText="bien joué";
-        text.style.color="green";
-       }
-      };
-  
- 
-// function Devimoy(){
-//   switch (true) {
-//     case (nbrSaisie > entiera):
-//       text.innerText="plus petit";
-//       chance--;
-//       nbrSaisie="";
-//       break;
-//     case (nbrSaisie === entiera):
-//        text.innerText="nombre trouvé";
-//        chance = 0;
-//        nbrSaisie="";
-//        break;
-//     default:
-//       text.innerText="plus grand";
-//       chance--;
-//       nbrSaisie="";
-//    }
-//   };
-// function Devidef(){
-//   switch (true) {
-//     case (val.value > entierb):
-//       text.innerText="plus petit";
-//       chance--;
-        //  val.value="";
-//       break;
-//     case (val.value == entierb):
-//        text.innerText="nombre trouvé";
-//        chance = 0;
-// val.value="";
-//        break;
-//     default:
-//       text.innerText="plus grand";
-//       chance--;
-// val.value="";
-//    }
-//   };
+  else{
+    mot.innerText= "Dommage Vous avez perdu";
+    mot.style.color="red";
+  }
+  Findejeu();
+  saisie.value="";
+};
+ Somme();
+ btn1.addEventListener("click",Compariason);
+ btn2.addEventListener("click",Rejouer);

@@ -9,15 +9,18 @@
     <title>DOM</title>
   </head>
   <body>
-    <h1>Jeu de devinette</h1>
-    Choisir votre niveau : 
-    <input type="radio" name="level">Facile</input>
-    <input type="radio" name="level">Moyen</input>
-    <input type="radio" name="level">Difficile</input>
+    <div id="jeu">
+      <h1>Calcule des nombres aléatoires</h1>
+    <p id="affichage"></p> 
+    <input type="number">
+    <button id="control" class="clac">Vérifier</button>
+    </div>
 
-    <p></p>
-    <input type="text" id="valeur">
-    <button>valider</button>
+<div id="finJeu">
+  <h1 id="fin"></h1>
+  <p>Voulez-vous recommencer le calcul !</p>
+  <button id="reje">Rejouer</button>
+</div>
     
     
     <script src="script.js"></script>
