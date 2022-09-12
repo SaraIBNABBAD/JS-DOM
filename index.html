@@ -9,25 +9,24 @@
     <title>DOM</title>
   </head>
   <body>
-    <div class="color">
-      <div id="jouer">
-        <h1> devinette</h1>
+    <form action="">
       
-      <input type="radio" name="level" class="choix"> <strong>Facile</strong> </input>
-      <input type="radio" name="level" class="choix"><strong>Moyen</strong></input>
-      <input type="radio" name="level" class="choix"><strong>Difficile</strong></input>
-      <h2 id="saisir"></h2>
-      <p></p>
-     <div> <input type="text" id="valeur">
-      <button>Valider</button></div>
-      </div> 
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" name="nom" placeholder="saisir votre nom" required>
+      <span id="error"></span>
+      <label for="prenom">Prénom</label>
+      <input type="text" id="prenom" name="prenom" placeholder="saisir votre prénom" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="saisir votre email" >
+      <label for="naissance">Date de naissance</label>
+      <input type="date" id="naissance" name="naissance">
+      <label for="sexe">Sexe</label>
+      <input type="radio" id="sexe" name="sexe" value="Femme">Femme
+      <input type="radio" id="sexe" name="sexe" value="Homme">Homme
+      <button type="submit">Enregistrer</button>
       
-      <div id="rejouer">
-        <span id="mess"></span>
-        <h1>Voulez vous recommencer?</h1>
-        <button id="restart">Rejouer</button>
-      </div>
-    </div>
+      
+    </form>
     
     
     
