@@ -1,60 +1,74 @@
- 
- let choix = document.querySelectorAll("input");
- let text = document.querySelector("p");
- let btn = document.querySelector("button");
- let btnR = document.getElementById("restart");
- let val = document.getElementById("valeur");
-let viewA = document.getElementById("jouer");
-let viewB = document.getElementById("rejouer");
+const radioButtons = document.querySelectorAll('input[name="lvl"]');
+let instructions = document.getElementById("instructions");
+let button = document.querySelector("button");
+let essays = document.getElementById("chance");
+let userGuess = document.getElementById("input");
+let result = document.getElementById("results");
+let audios = document.querySelectorAll("audio");
+let chancenbr, nombreAleatoire;
 
- function Aleatoire(min, max)
- {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-let entier = Aleatoire(1, 10);;
-console.log(entier);
-
-
-  let tentative= 3;
-  let nbreTrouve = false;
-  
-
-
-function rejouerView() {
-
-  viewB.style.display = "block";
-  viewA.style.display = "none";
-}
-function jouerView() {
- 
-  viewB.style.display = "none";
-  viewA.style.display = "block";
+function selection(min, max, chance) {
+  instructions.textContent = `Enter a number btw ${min} and ${max}`;
+  essays.textContent = `You have ${chance} chances to guess the right number`;
+  let randomNumber = Math.floor(Math.random() * max) + min;
+  chancenbr = chance;
+  nombreAleatoire = randomNumber;
+  result.innerText = "";
+  nombreTrouve = false;
 }
 
+function easylvl() {
+  selection(1, 10, 3);
+  console.log(nombreAleatoire);
+}
+function mlvl() {
+  selection(1, 100, 5);
+  console.log(nombreAleatoire);
+}
+function hardlvl() {
+  selection(1, 1000, 10);
+  console.log(nombreAleatoire);
+}
 
-function devinFacil(){
- let nbr = Number(val.value);
-  if (nbr < entier){
-    text.innerText="plus grand";
-    tentative--;
-  }else if(nbr === entier){
-    text.innerText="nombre trouvé";
-    nbreTrouve=true;
-  }else{
-    text.innerText="plus petit";
-    tentative--;
+function gameOver() {
+  document.getElementById("gamArea").style.display = "none";
+  document.getElementById("restart").style.display = "block";
+}
+function Restart() {
+  selection();
+  document.getElementById("gamArea").style.display = "block";
+  document.getElementById("restart").style.display = "none";
+}
+
+function guessing() {
+  let userGuessValue = Number(userGuess.value);
+
+  if (userGuessValue > nombreAleatoire) {
+    result.innerText = `${userGuessValue} is high , enter a lower number`;
+    chancenbr--;
+  } else if (userGuessValue === nombreAleatoire) {
+    result.innerText = "Good job !! ";
+    result.style.color = "green";
+    nombreTrouve = true;
+  } else {
+    result.innerText = `${userGuessValue} is low , enter a higher number`;
+    chancenbr--;
   }
-       if(tentative === 0 && nbreTrouve === false){
-        text.innerText="Vous avez echoué";
-        text.style.color="red";
-        rejouerView();
-       }
-       if(nbreTrouve === true){
-        text.innerText="Vous avez bien joué";
-        text.style.color="green";
-        rejouerView();
-       }
-       val.value="";
-      };
-          btn.addEventListener("click",devinFacil);
-          btnR.addEventListener("click",jouerView);
+
+  if (chancenbr === 0 && nombreTrouve === false) {
+    result.innerText = "You lost ";
+    result.style.color = "red";
+    audios[1].play();
+    gameOver();
+  }
+  if (nombreTrouve === true) {
+    result.innerText = "You won";
+    result.style.color = "green";
+    audios[0].play();
+    gameOver();
+  }
+  userGuess.value = "";
+}
+
+button.addEventListener("click", guessing);
+document.getElementById("restart").addEventListener("click", Restart);
