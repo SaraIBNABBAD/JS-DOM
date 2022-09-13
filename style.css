@@ -1,3 +1,75 @@
-ul li{
-    list-style: none;
+body{
+    margin: 0;
+    background-image: url(gradient-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#calc{
+    margin:150px auto;
+    text-align: center;
+    width: 70%;
+    align-items: center;
+    /* border-radius: 20px;
+    border-color: #5cd0ed;
+    box-shadow: 0px 5px 30px -5px #5cd0ed; */
+   
+}
+#calc input{
+    background-color: #e3f4f4;
+    padding: 30px;
+    width: 23%;
+    margin-bottom: -10px;
+    border: none;
+    border-radius: 10px 10px 0 0 ;
+}
+.grid {
+    margin: 10px auto;
+    text-align: center;
+    width: 30%;
+    padding: 5px;
+    background-color: #d0edec;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    border: none;
+    border-radius:  0 0 10px 10px;
+       
+}
+button{
+    border-radius: 5px;
+    border-color: transparent;
+    font-size: 1.5em; 
+    background-color: #a2dad9;
+    color: white;
+    height: 55px;
+    cursor:pointer;
+}
+.egual{
+    grid-column: -2;
+    grid-row:  3 /span 3;
+    background-color: #5cd0ed;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border-color: transparent;
+    height: 190px;
+}
+.signe{
+    background-color: #8a75c9;
+    color: white;
+    border-radius: 100%;
+    border-color: transparent;
+    
+    
+}
+#reset{
+    background-color: #ff5cac;
+    color: white;
+}
+button:hover{
+    filter: drop-shadow(1px 1px 2px #98bfbf);;
+}
+button:active{
+    transform: translateY(3px);
 }
