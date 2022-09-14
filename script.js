@@ -16,9 +16,14 @@
 //         event.preventDefault();
 //     }
 // })
-let email="sara-9@testt.com";
-let char=/^[a-zA-Z0-9-_]+@[a-zA-Z]{4,}\.[a-zA-Z]+$/;
-console.log(char.test(email));
+
+// let email="sara-9@testt.com";
+// let char=/^[a-zA-Z0-9-_]+@[a-zA-Z]{4,}\.[a-zA-Z]+$/;
+// console.log(char.test(email));
+let pw="ssff32_";
+let regex= /^[a-zA-Z0-9.*_-]{6,12}$/;
+console.log(regex.test(pw));
+
 
 // let MdP="Sar-a@2";
 // let char=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{6,12})$/;
