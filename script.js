@@ -1,39 +1,90 @@
-// let form=document.querySelector("form");
-// let nom =form.elements['nom'];
-// let prenom=form.elements['prenom'];
-// console.log(nom.value);
-// console.log(prenom.value);
-// let char=/^[a-zA-Z-\s]+$/;
-// form.addEventListener('submit',function(event){
-//     event.preventDefault();
-//     if(nom.value.length==0){
-//         let error=document.getElementById("error");
-//         error.innerText="Le champs est obligatoire veuillez le remplir !";
-//         error.style.color="red";
-//     }else if (char.test(nom.value)=false){
-//         error.innerText="Le champs est obligatoire veuillez le remplir !";
-//         error.style.color="red";
-//         event.preventDefault();
-//     }
+// let success = true;
+
+// let promesse = new Promise(function (resolve, reject) {
+//   if (success) {
+//     let a = 5;
+//     let b = 25;
+//     let res = a + b;
+//     resolve(res);
+//   } else {
+//     reject("error de calcul");
+//   }
+// });
+
+// promesse.then((res) => {
+//   console.log(res);
+// }) 
+// .catch(function(failure){
+//   console.log(failure);
 // })
 
-// let email="sara-9@testt.com";
-// let char=/^[a-zA-Z0-9-_]+@[a-zA-Z]{4,}\.[a-zA-Z]+$/;
-// console.log(char.test(email));
-let pw="ssff32_";
-let regex= /^[a-zA-Z0-9.*_-]{6,12}$/;
-console.log(regex.test(pw));
 
+// let success = true;
 
-// let MdP="Sar-a@2";
-// let char=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{6,12})$/;
-// console.log(char.test(MdP));
-// const text = "i love you and all"
-// const regex = /(\w+) (\w+) (\w+) (\w+)/;
-// console.log(text.match(regex));
+// let promesse = new Promise(function (resolve, reject) {
+//   if (success) {
+//     let a = 5;
+//     if (a % 2 == 0) {
+//       resolve();
+//     }
+//   } else {
+//     reject("Error de calcul");
+//   }
+// });
 
-// console.log(text.replace(regex, "$4 $1"));
+// promesse
+//   .then((success) => {
+//     console.log(success);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
-// function checkEmail(field){
-//     let char=/^[a-zA-Z0-9-]+@[a-zA-Z]{4,}\.[a-zA-Z]+$/;
+// function nbrePaire(nombre) {
+//   let promesse = new Promise(function (resolve, reject) {
+//     if (nombre % 2 == 0) {
+//       let result = nombre * nombre;
+//       resolve(result);
+//     } else {
+//       reject("le nombre est impair");
+//     }
+//   });
+//   return promesse;
 // }
+
+// let prom = nbrePaire(3);
+// prom
+//   .then((resultat) => {
+//     console.log(resultat);
+//   })
+//   .catch((erreur) => {
+//     console.log(erreur);
+//   })
+
+// function sommeTab(taille){
+//     let nbr=[10,39,21,8,56,30,0];
+//     let somme=0;
+//     let promesse=new Promise (function(resolve,reject){
+//         if(taille<=nbr.length && taille>0){
+//             for(let i = 0 ; i<taille ; i++){
+//                 somme=somme+nbr[i];
+//             }resolve(somme);
+//         }else{
+//             reject("ressaisir le nbr")
+//         }
+//     });
+//     return promesse;
+// }
+// let prom = sommeTab(3);
+//  prom.then((resultat) => {
+//      console.log(resultat);
+//    }).catch((erreur) => {
+//      console.log(erreur);
+//   });
+
+  // let promesse = new Promise (function(resolve,reject){
+    
+  // });
+  let text = "je m'appelle sara";
+    let reg = /(\w+) (\w+) (\w+) (\w+) /;
+    console.log(text.replace(reg, "$4 $3 $2 $1"));
