@@ -61,23 +61,28 @@
 //     console.log(erreur);
 //   })
 
-function sommeTab(taille){
-    let nbr=[10,39,21,8,56,30,0];
-    let somme=0;
-    let promesse=new Promise (function(resolve,reject){
-        if(taille<=nbr.length && taille>0){
-            for(let i = 0 ; i<taille ; i++){
-                somme=somme+nbr[i];
-            }resolve(somme);
-        }else{
-            reject("ressaisir le nbr")
-        }
-    });
-    return promesse;
-}
-let prom = sommeTab(3);
- prom.then((resultat) => {
-     console.log(resultat);
-   }).catch((erreur) => {
-     console.log(erreur);
+// function sommeTab(taille){
+//     let nbr=[10,39,21,8,56,30,0];
+//     let somme=0;
+//     let promesse=new Promise (function(resolve,reject){
+//         if(taille<=nbr.length && taille>0){
+//             for(let i = 0 ; i<taille ; i++){
+//                 somme=somme+nbr[i];
+//             }resolve(somme);
+//         }else{
+//             reject("ressaisir le nbr")
+//         }
+//     });
+//     return promesse;
+// }
+// let prom = sommeTab(3);
+//  prom.then((resultat) => {
+//      console.log(resultat);
+//    }).catch((erreur) => {
+//      console.log(erreur);
+//   });
+
+  let promesse = new Promise (function(resolve,reject){
+    let text = "je m'appelle sara ibn abbad";
+    let reg = 
   });
