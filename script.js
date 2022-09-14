@@ -84,5 +84,6 @@
 
   let promesse = new Promise (function(resolve,reject){
     let text = "je m'appelle sara ibn abbad";
-    let reg = 
+    let reg = /(\w+) (\w+) (\w+) (\w+) (\w+){5,}/;
+    console.log(text.replace(reg, "$5 $4 $3 $2 $1"));
   });
