@@ -7,7 +7,7 @@ body{
 #calc{
     margin:150px auto;
     text-align: center;
-    width: 25%;
+    width: 20%;
     align-items: center;
     /* border-radius: 20px;
     border-color: #5cd0ed;
@@ -33,10 +33,11 @@ body{
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 10px;
+    gap: 5px;
     border: none;
     border-radius:  0 0 10px 10px;
-       
+    align-items: center;
+    
 }
 button{
     border-radius: 5px;
@@ -44,7 +45,8 @@ button{
     font-size: 1.5em; 
     background-color: #a2dad9;
     color: white;
-    height: 55px;
+    height: 45px;
+    width: 45px;
     cursor:pointer;
 }
 .egual{
@@ -55,7 +57,7 @@ button{
     font-size: 1.5em;
     border-radius: 10px;
     border-color: transparent;
-    height: 190px;
+    height: 170px;
 }
 .signe{
     background-color: #8a75c9;
