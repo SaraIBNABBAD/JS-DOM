@@ -82,8 +82,69 @@
 //      console.log(erreur);
 //   });
 
-  let promesse = new Promise (function(resolve,reject){
-    let text = "je m'appelle sara ibn abbad";
-    let reg = /(\w+) (\w+) (\w+) (\w+) (\w+){5,}/;
-    console.log(text.replace(reg, "$5 $4 $3 $2 $1"));
-  });
+  // let promesse = new Promise (function(resolve,reject){
+  //   let text = "i love learning";
+  // if(text.length>5){
+  //   let reg = /(\w+) (\w+) (\w+)/g;
+  //  console.log(text.replace(reg,"$3 $2 $1"));
+  //  resolve(text);
+  // }else{
+  //   reject("opération invalidé");
+  // }
+  //  });
+  //  promesse.then((text)=>{
+  //   console.log(text);
+  //  }).catch((erreur)=>{
+  //   console.log(erreur);
+  //  });
+
+  // function remplirTab(n){
+  //   let tab=[];
+  //   let promesse=new Promise(function(resolve){
+  //     for (let i=0;i<n+1;i++){
+  //       tab[i]=i+1;
+  //     }
+  //     resolve(tab);
+  //   });
+  //   return promesse;
+  // }
+  // let prom = remplirTab(5);
+  //   prom.then((rem) => {
+  //      console.log(rem);
+  //    });
+
+  // async function afficherTab(t){
+     
+  //    let affichage = await remplirTab(t);
+  //      console.log(affichage);
+     
+  // };
+  // afficherTab(5);
+
+  let url="https://jsonplaceholder.typicode.com/users";
+
+  //  async function getData(){
+  //    let data= await fetch(url);
+  //    let dataa= await data.json();
+  // for (let i = 0; i < 5; i++) {
+  //   let info = dataa[i];
+  //   console.log(info.name, info.email);
+  // }
+  //  }
+  //   getData(url);
+    
+ 
+
+
+ fetch(url)
+  .then((person) => {
+    return person.json();
+  })
+  .then((res) => {
+    for (let i = 0; i < 5; i++) {
+      let person = res[i];
+      console.log(person.name,person.email);
+    }
+  }); 
+
+  
