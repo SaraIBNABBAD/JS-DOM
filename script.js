@@ -9,18 +9,25 @@ let quotee
       try {
          let quot = await fetch(url);
      quotee = await quot.json();
+     randomQuote();
       } catch (error) {
-         console.log(error);
+         document.querySelector("#quote").innerHTML="<h1> Pas de connexion </h1>";
       }
-      randomQuote();
    }
-    getQuote(url);
+    getQuote(url).catch((error)=>{
+      console.log(error.message);
+    });
 
     function randomQuote(){
       let num = Math.floor(Math.random() * quotee.length);
      let texte=quotee[num];
     console.log(texte);
     phrase.innerText=texte.text;
-    auteur.innerText=texte.author;
+    if (texte.author==null){
+      auteur.innerText="Inconnu";
+    }else{
+      auteur.innerText=texte.author;
+    }
+    
     }
     btn.addEventListener("click",randomQuote);
