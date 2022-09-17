@@ -1,43 +1,17 @@
-.hide{
-    display: none;
-    height: 0;
-    overflow: hidden;
-    padding: 0 10px !important;
-    margin: 0;
-}
-
 #head{
-    display: flex;
-    gap: 100px;
-    background-color: rgb(121, 209, 211);
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    height: 50%;
+}
+img{
     width: 70%;
-    margin: auto;
-    padding: 10px;
-    border: 1px solid transparent;
-    border-radius: 10px 10px 0  0;
     
 }
-button:hover{
-    cursor: pointer;
+button i{
+    font-size: 1.5em;
+    color: blue;
 }
-#content{
-    
-    width: 71.7%;
-    margin: auto;
-   border: 1px solid transparent;
-   border-radius:0 0 10px 10px;
-   padding: 10px;
-   box-sizing: border-box;
-   background-color: rgb(242, 237, 237);
-   transition: all 0.5s;
-   
-}
-button{
-    background-color: transparent;
-    border: none;
-    color: white;
-}
-h1{
-    color: white;
-    margin: auto;
+h5{
+    display: inline;
 }

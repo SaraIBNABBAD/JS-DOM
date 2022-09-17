@@ -1,13 +1,14 @@
+let btns = document.querySelectorAll("button");
+let like = document.querySelector(".like");
+let dislike = document.querySelector(".dislike");
 
-let parg = document.getElementById("content");
-let icone = document.querySelector("i");
-
-icone.addEventListener("click",function(){
-    parg.classList.toggle("hide");
-    if(parg.classList.contains("hide")){
-        icone.classList.replace("fa-minus","fa-plus");
-    }else{
-        icone.classList.replace("fa-plus","fa-minus");
-    }
-});
-
+let count=0;
+let num=0;
+btns[0].addEventListener("click",function(){
+    count++;
+    like.textContent=count++;
+})
+btns[1].addEventListener("click",function(){
+    num++;
+    dislike.textContent=num++;
+})
