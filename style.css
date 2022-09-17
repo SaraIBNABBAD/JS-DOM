@@ -1,8 +1,12 @@
 .hide{
-    display: none;
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    padding: 0 10px !important;
+    margin: 0;
 }
 
-div{
+#head{
     display: flex;
     gap: 100px;
     background-color: rgb(121, 209, 211);
@@ -10,17 +14,23 @@ div{
     margin: auto;
     padding: 10px;
     border: 1px solid transparent;
-   border-radius: 10px 10px 0 0 ;
+    border-radius: 10px 10px 0  0;
+    
 }
-p{
+button:hover{
+    cursor: pointer;
+}
+#content{
     
     width: 71.7%;
     margin: auto;
-   border: 1px solid rgb(244, 244, 244);
+   border: 1px solid transparent;
    border-radius:0 0 10px 10px;
-   padding: 30px;
+   padding: 10px;
    box-sizing: border-box;
-   background-color: rgb(244, 244, 244);
+   background-color: rgb(242, 237, 237);
+   transition: all 0.3s;
+   
 }
 button{
     background-color: transparent;
