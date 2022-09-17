@@ -2,11 +2,11 @@
     /* display: none; */
     height: 0;
     overflow: hidden;
-    padding: 0 !important;
+    padding: 0 10px !important;
     margin: 0;
 }
 
-div{
+#head{
     display: flex;
     gap: 100px;
     background-color: rgb(121, 209, 211);
@@ -15,6 +15,10 @@ div{
     padding: 10px;
     border: 1px solid transparent;
     border-radius: 10px 10px 0  0;
+    
+}
+button:hover{
+    cursor: pointer;
 }
 #content{
     
@@ -22,10 +26,11 @@ div{
     margin: auto;
    border: 1px solid transparent;
    border-radius:0 0 10px 10px;
-   padding: 30px;
+   padding: 10px;
    box-sizing: border-box;
    background-color: rgb(242, 237, 237);
    transition: all 0.5s;
+   
 }
 button{
     background-color: transparent;
