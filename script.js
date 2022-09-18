@@ -1,14 +1,12 @@
-let btns = document.querySelectorAll("button");
-let like = document.querySelector(".like");
-let dislike = document.querySelector(".dislike");
+let btn = document.querySelector("button");
+let body = document.querySelector("body");
+let icone = document.querySelector("i");  
 
-let count=0;
-let num=0;
-btns[0].addEventListener("click",function(){
-    count++;
-    like.textContent=count++;
-})
-btns[1].addEventListener("click",function(){
-    num++;
-    dislike.textContent=num++;
+btn.addEventListener("click",function(){
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        icone.classList.replace("fa-moon","fa-sun");
+    }else{
+        icone.classList.replace("fa-sun","fa-moon");
+    }
 })

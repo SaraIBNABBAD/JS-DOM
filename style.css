@@ -1,17 +1,40 @@
-#head{
-    width: 50%;
+.dark{
+    background-color: rgb(9, 9, 9);
+    color: white;
+}
+/* .button{
+    float: right ;
+    margin-right: 10px;
+    width: 60px;
+    padding: 5px;
+    font-size: 1.3em;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border-color: transparent;
+
+} */
+.text{
+    width: 60%;
     margin: auto;
+    text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.text h1{
     text-align: center;
-    height: 50%;
 }
-img{
-    width: 70%;
-    
+button{
+    float: right ;
+    margin-right: 10px;
+    width: 60px;
+    padding: 5px;
+    font-size: 1.3em;
+    /* background-color: black; */
+    /* color: white; */
+    border-radius: 4px;
+    border-color: transparent;
+
 }
-button i{
-    font-size: 1.5em;
-    color: blue;
-}
-h5{
-    display: inline;
+p,h1{
+    clear: both;
 }
