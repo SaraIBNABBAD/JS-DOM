@@ -30,6 +30,7 @@ btns.forEach((button=>{
           }else if(button.classList.contains("signe")){
             frstValue=Number(output.textContent);
             sign=button.value;
+            output.textContent += sign;
             waitscdValue = true;
             nombreDecimal=false;
           }else if(button.classList.contains("egal")){
@@ -39,23 +40,30 @@ btns.forEach((button=>{
                 case "+":
                     res=frstValue+scdValue;
                     break;
-                    case "*":
+                    case "×":
                     res=frstValue*scdValue;
                     break;
                     case "-":
                         res=frstValue-scdValue;
                         break;
-                        case "/":
+                        case "÷":
                             res=frstValue/scdValue;
                             break;
                 default:
                     res=scdValue;
                     break;
             }
-            output.textContent=res;
+            output.textContent=frstValue+sign+scdValue+"="+res;
           }
-
-
        
     })
 }))
+
+function reset(){
+ waitscdValue = false;
+ frstValue=0;
+ nombreDecimal=false;
+ sign="";
+output.textContent=frstValue;
+}
+clear.addEventListener("click",reset);
