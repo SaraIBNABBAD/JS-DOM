@@ -1,11 +1,17 @@
 
 let parg = document.getElementById("content");
-let icone = document.querySelector("button");
+let icones = document.querySelectorAll("button");
 
-icone.addEventListener("click",function(){
+icones[0].addEventListener("click",function(){
     parg.classList.toggle("hide");
     
-        icone.classList.toggle("active");
+        icones.classList.toggle("active");
     
+});
+icones[2].addEventListener("click",function(){
+  parg.classList.toggle("hide");
+  
+      icones.classList.toggle("active");
+  
 });
 
