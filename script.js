@@ -3,43 +3,29 @@ let like = document.querySelector(".like");
 let dislike = document.querySelector(".dislike");
 let image = document.querySelector("img");
 
-let count=0;
-let compte=0;
+let count=localStorage.getItem("count")==null? 0 :localStorage.getItem("count");
+let compte=localStorage.getItem("compte")==null? 0 :localStorage.getItem("compte");
 
+/* ---- click like avec btn----- */
+like.textContent=count;
 btns[0].addEventListener("click",function(){
     count++;
     like.textContent=count;
-    if (localStorage.count) {
-        localStorage.count = Number(localStorage.count)+1;
-      } else {
-        localStorage.count = 1;
-      }
-      like.textContent = localStorage.count;
+localStorage.setItem("count",count);
+    
 })
+/* ---- click dislike avec btn----- */
+dislike.textContent=compte;
 btns[1].addEventListener("click",function(){
     compte++;
     dislike.textContent=compte;
-    if (localStorage.compte) {
-        localStorage.compte = Number(localStorage.compte)+1;
-      } else {
-        localStorage.compte = 1;
-      }
-      dislike.textContent = localStorage.compte;
+    localStorage.setItem("compte",compte);
 })
+
+/* ---- double-click like avec img----- */
+like.textContent=count;
 image.addEventListener("dblclick",function(){
     count++;
     like.textContent=count;
-    if (localStorage.count) {
-        localStorage.count = Number(localStorage.count)+1;
-      } else {
-        localStorage.count = 1;
-      }
-      like.textContent = localStorage.count;
+    localStorage.setItem("count",count);
 })
-
-// const sauvgarde = {
-//     "lik" : count,
-//     "dislk" : compte,
-// }
-// let save = JSON.stringify(sauvgarde);
-// localStorage.setItem("sauvgarde",save);
