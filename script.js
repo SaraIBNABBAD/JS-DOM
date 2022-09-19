@@ -5,6 +5,7 @@ let image = document.querySelector("img");
 
 let count=0;
 let compte=0;
+
 btns[0].addEventListener("click",function(){
     count++;
     like.textContent=count;
