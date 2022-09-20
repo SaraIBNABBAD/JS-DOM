@@ -6,7 +6,7 @@
     margin: 0;
 }
 
-#head{
+.head{
     display: flex;
     gap: 100px;
     background-color: rgb(121, 209, 211);
@@ -15,12 +15,14 @@
     padding: 10px;
     border: 1px solid transparent;
     border-radius: 10px 10px 0  0;
+    overflow: auto;
+    
     
 }
 button:hover{
     cursor: pointer;
 }
-#content{
+.content{
     
     width: 71.7%;
     margin: auto;
@@ -36,6 +38,7 @@ button{
     background-color: transparent;
     border: none;
     color: white;
+    outline: none;
 }
 h1{
     color: white;
