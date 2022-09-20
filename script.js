@@ -53,7 +53,7 @@ btns.forEach((button=>{
                     res=scdValue;
                     break;
             }
-            output.textContent=frstValue+sign+scdValue+"="+res;
+            output.textContent=res;
           }
        
     })
